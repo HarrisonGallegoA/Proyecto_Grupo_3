@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <title>Inventario Ferretería MULTI</title>
+    <title>Inventario</title>
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
-    <h1>Inventario Ferretería MULTI</h1>
+    <header>
+        <nav>
+            <ul class="nav-items">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Inventario</a></li>
+                <li><a href="">Servicios</a></li>
+                <li><a href="">Productos</a></li>
+                <li><a href="">Ventas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <br>
+
+    <div class="banner">
+        <div class="texto">
+            <h1>Inventario "NombreProyecto"</h1>
+        </div>
+    </div>
+
     <div id="inventory-section" style="height: 200px; overflow-y: scroll;">
         <h2>Inventario</h2>
         <ul id="product-list"></ul>
@@ -26,4 +47,5 @@
     <div id="message"></div>
     <script src="./scripts/inventario.js"></script>
 </body>
+ 
 </html>

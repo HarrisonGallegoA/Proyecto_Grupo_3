@@ -1,36 +1,170 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
 }
 
-h1 {
-    background-color: #333;
+/*Estilos de index.html*/
+#login-section h2 {
+    color: #0174BE;
+}
+
+#login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+#login-form input[type="text"],
+input[type="password"] {
+    width: 35%;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-bottom: solid 2px #0C356A;
+    font-size: 17px;
+    margin-bottom: 15px;
+
+}
+
+#login-form input[type="text"]:focus {
+    color: #0174BE;
+    border-bottom: 4px solid #FFC436;
+    transition: 0.4s;
+}
+
+#login-form input[type="password"]:focus {
+    color: #0174BE;
+    border-bottom: 4px solid #FFC436;
+    transition: 0.4s;
+}
+
+#login-form button {
+    width: 15%;
+    height: 40px;
+    background-color: #0174BE;
     color: #fff;
+    border-radius: 10px;
+    border: none;
+    font-size: 21px;
+    margin-top: 50px;
+}
+
+#login-form button:hover {
+    background-color: #FFC436;
+    color: #0C356A;
+    transition: 0.4s;
+}
+/*Estilos de index.html*/
+
+
+/*Estilos de admin.html*/
+/*Barra de Navegacion*/
+header {
+    background-color: #0C356A;
+    color: #FFC436;
     padding: 10px;
 }
 
-#inventory-section, #add-product-form {
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 2%;
+}
+
+.nav-items li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 20px;
+}
+
+.nav-items a {
+    font-size: 22px;
+    color: #FFC436;
+    text-decoration: none;
+}
+
+/*Titulo*/
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .texto {
+    width: 45%;
+    background-color: #0C356A;
+    border-radius: 15px;
+}
+
+h1,
+h2 {
+    color: #FFC436;
+}
+
+/*Inventario y Agregar productos*/
+#inventory-section,
+#add-product-form {
     margin: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #0C356A;
+    border-radius: 10px;
     text-align: left;
+    background-color: #0174BE;
+    color: #FFF0CE;
 }
 
-button {
+li {
+    border: 1px solid #0C356A;
+    border-radius: 15px;
     margin: 5px;
-}
-
-#message {
-    color: green;
-    font-weight: bold;
+    padding: 5px;
 }
 
 #product-list {
     list-style-type: none;
 }
 
-li {
-    border: 1px solid #ccc;
-    margin: 5px;
-    padding: 5px;
+#product-form input[type="text"],
+input[type="number"]{
+    width: 32%;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-bottom: solid 2px #0C356A;
+    font-size: 17px;
+    color: #0C356A;
+    margin-top: 15px;
 }
+
+#product-form button {
+    width: 20%;
+    height: 35px;
+    color: #FFC436;
+    font-size: 21px;
+    margin-top: 20px;
+    background-color: #0C356A;
+    border: none;
+    border-radius: 10px;
+}
+
+#product-form button:hover {
+    background-color: #FFC436;
+    color: #0C356A;
+    transition: 0.4s;
+}
+
+#message {
+    color: #0C356A;
+    font-weight: bold;
+}
+
+ 
+/*Estilos de admin html*/

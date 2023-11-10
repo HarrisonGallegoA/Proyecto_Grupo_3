@@ -109,6 +109,37 @@ h2 {
     color: #FFC436;
 }
 
+/* #inventory-table tbody */
+.tb_inventory {
+    border-collapse: separate;
+    text-align: center;
+}
+
+.tb_inventory thead {
+    background-color: #0C356A;
+    color: #FFC436;
+}
+
+.tb_inventory thead tr th {
+    padding: 5px;
+}
+.tb_inventory tbody {
+    background-color: rgb(237 240 241 / 30%);
+    color: #FFF0CE;
+}
+
+.tb_inventory tbody tr {
+    border-bottom: 1px solid #0C356A;
+}
+.tb_inventory tbody tr:hover {
+    background-color: rgb(237 240 241 / 50%);
+    color: #0C356A;
+    transition: 0.4s;
+}
+.tb_inventory tbody tr td {
+    padding: 2px 5px;
+}
+
 /*Inventario y Agregar productos*/
 #inventory-section,
 #add-product-form {
@@ -162,9 +193,13 @@ input[type="number"]{
 }
 
 #message {
+    bottom: 0px;
     color: #0C356A;
     font-weight: bold;
+    min-height: 3rem;
+    position: fixed;
+    width: 100%;
 }
+/*Estilos de admin html*/
 
  
-/*Estilos de admin html*/

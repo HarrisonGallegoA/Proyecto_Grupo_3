@@ -7,10 +7,18 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
 }
-
+header{
+    text-align: center;
+}
 /*Estilos de index.html*/
+.imagen{
+    display: flex;
+    justify-content: center;
+}
+
 #login-section h2 {
     color: #0174BE;
+    text-align: center;
 }
 
 #login-form {
@@ -19,6 +27,7 @@ body {
     align-items: center;
     flex-direction: column;
     width: 100%;
+    margin-top: 25px;
 }
 
 #login-form input[type="text"],

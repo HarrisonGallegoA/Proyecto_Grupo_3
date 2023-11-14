@@ -8,9 +8,23 @@ body {
     text-align: center;
 }
 
+.back {
+    background-image: url(../imagenes/Texture-Tennis.png);
+}
+
+header {
+    text-align: center;
+}
+
 /*Estilos de index.html*/
+.imagen {
+    display: flex;
+    justify-content: center;
+}
+
 #login-section h2 {
     color: #0174BE;
+    text-align: center;
 }
 
 #login-form {
@@ -19,6 +33,7 @@ body {
     align-items: center;
     flex-direction: column;
     width: 100%;
+    margin-top: 25px;
 }
 
 #login-form input[type="text"],
@@ -61,6 +76,7 @@ input[type="password"] {
     color: #0C356A;
     transition: 0.4s;
 }
+
 /*Estilos de index.html*/
 
 
@@ -89,6 +105,13 @@ header {
     font-size: 22px;
     color: #FFC436;
     text-decoration: none;
+    border-radius: 2px;
+}
+
+.nav-items a:hover{
+    background-color: #FFC436;
+    color: #0C356A;
+    transition: 0.4s;
 }
 
 /*Titulo*/
@@ -164,7 +187,7 @@ li {
 }
 
 #product-form input[type="text"],
-input[type="number"]{
+input[type="number"] {
     width: 32%;
     height: 30px;
     outline: none;
@@ -202,4 +225,14 @@ input[type="number"]{
 }
 /*Estilos de admin html*/
 
- 
+.footer {
+    background-color: #0C356A;
+}
+
+box-icon {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
+
+/*Estilos de admin html*/

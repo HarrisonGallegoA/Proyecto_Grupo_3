@@ -105,6 +105,13 @@ header {
     font-size: 22px;
     color: #FFC436;
     text-decoration: none;
+    border-radius: 2px;
+}
+
+.nav-items a:hover{
+    background-color: #FFC436;
+    color: #0C356A;
+    transition: 0.4s;
 }
 
 /*Titulo*/

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,12 @@
     <body>
         <h1>Inventario Ferretería MULTI</h1>
         <div id="login-section">
-            <h2>Iniciar Sesión</h2>
+            <h2>Registro de usuario</h2>
             <form id="login-form">
-                <input type="text" id="username" placeholder="Nombre de usuario" required>
-                <input type="password" id="password" placeholder="Contraseña" required>
-                <button type="button" onclick="login()">Iniciar Sesión</button>
+                <input type="text" id="newUser" placeholder="Nombre de usuario" required>
+                <input type="password" id="newPassword" placeholder="Contraseña" required>
+                <button type="button" onclick="registrar()">Agregar usuario</button>
             </form>
-            <a href="registro.html"><button type="button">Registrarse</button></a>
         </div>
         <div id="message"></div>
     </body>

@@ -18,3 +18,18 @@ function login() {
         showMessage('Credenciales incorrectas. Inténtelo de nuevo.');
     }
 }
+
+function registrar() {
+    const userN = document.getElementById('newUser').value;
+    const passwordN = document.getElementById('newPassword').value;
+
+    let filter = users.find((user) => user.username === userN);
+
+    if (filter) {
+        showMessage(`El usuario con nombre ${userN} ya esta registrado!`);
+    }else{
+        users.push({ username: userN, password: passwordN });
+        alert(`El usuario ${userN} se registro con exito!`);
+        window.location.href = 'admin.html';
+    }
+}

@@ -6,6 +6,8 @@ function showMessage(message) {
     document.getElementById('message').textContent = message;
 }
 
+function redirect(){ window.location.href = 'registro.html' }
+
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;

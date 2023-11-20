@@ -6,6 +6,8 @@ function showMessage(message) {
     document.getElementById('message').textContent = message;
 }
 
+function redirect(){ window.location.href = 'registro.html' }
+
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -112,6 +114,20 @@ function login() {
     }
 }
 
+function registrar() {
+    const userN = document.getElementById('newUser').value;
+    const passwordN = document.getElementById('newPassword').value;
+
+    let filter = users.find((user) => user.username === userN);
+
+    if (filter) {
+        showMessage(`El usuario con nombre ${userN} ya esta registrado!`);
+    }else{
+        users.push({ username: userN, password: passwordN });
+        alert(`El usuario ${userN} se registro con exito!`);
+        window.location.href = 'admin.html';
+    }
+}
 const validatePass = (pass) => {
     let pattern = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
     if (pattern.test(pass)) return true; return false;

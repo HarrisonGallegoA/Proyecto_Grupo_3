@@ -25,20 +25,6 @@ function showMessage(message) {
     }, 5000);
 }
 
-// function showInventory() {
-//     const productList = document.getElementById('product-list');
-//     productList.innerHTML = '';
-
-//     inventory.forEach(product => {
-//         const li = document.createElement('li');
-//         li.textContent = `Código: ${product.code}  Nombre: ${product.name}  Cantidad: ${product.quantity}`;
-//         const deleteButton = document.createElement('i');
-//         deleteButton.classList.add('ti', 'ti-trash', 'text-danger', 'float-right');
-//         deleteButton.addEventListener('click', () => deleteProduct(product.code));
-//         li.appendChild(deleteButton);
-//         productList.appendChild(li);
-//     });
-// }
 
 function createInventoryTable() {
     const inventoryTable = document.createElement('div');
@@ -74,10 +60,7 @@ async function showInventory() {
         // Crear fila para el producto
         const row = t_body.insertRow(index);
         row.classList.add('text-center');
-
-
-
-
+        
         // Añadir celdas con la información del producto
         Object.values(product).forEach((value, columnIndex) => {
             const cell = row.insertCell(columnIndex);
@@ -91,6 +74,15 @@ async function showInventory() {
         deleteButton.classList.add('ti', 'ti-trash', 'bg-danger', 'float-right', 'p-1', 'rounded-circle');
         deleteButton.addEventListener('click', () => deleteProduct(product.code));
         deleteCell.appendChild(deleteButton);
+
+        // Añadir botón de editar en la última columna
+        // const editCell = row.insertCell(Object.keys(product).length);
+        // const editButton = document.createElement('i');
+        // // bg-warning float-right p-1 rounded-circle ti ti-pencil
+        // editButton.classList.add('ti', 'ti-pencil', 'bg-warning', 'float-right', 'p-1', 'rounded-circle');
+        // editButton.addEventListener('click', () => editProduct(product.code));
+        // editCell.appendChild(editButton);
+
     });
 }
 

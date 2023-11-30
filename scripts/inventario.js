@@ -25,20 +25,6 @@ function showMessage(message) {
     }, 5000);
 }
 
-// function showInventory() {
-//     const productList = document.getElementById('product-list');
-//     productList.innerHTML = '';
-
-//     inventory.forEach(product => {
-//         const li = document.createElement('li');
-//         li.textContent = `Código: ${product.code}  Nombre: ${product.name}  Cantidad: ${product.quantity}`;
-//         const deleteButton = document.createElement('i');
-//         deleteButton.classList.add('ti', 'ti-trash', 'text-danger', 'float-right');
-//         deleteButton.addEventListener('click', () => deleteProduct(product.code));
-//         li.appendChild(deleteButton);
-//         productList.appendChild(li);
-//     });
-// }
 
 function createInventoryTable() {
     const inventoryTable = document.createElement('div');
@@ -74,10 +60,7 @@ async function showInventory() {
         // Crear fila para el producto
         const row = t_body.insertRow(index);
         row.classList.add('text-center');
-
-
-
-
+        
         // Añadir celdas con la información del producto
         Object.values(product).forEach((value, columnIndex) => {
             const cell = row.insertCell(columnIndex);
@@ -87,8 +70,7 @@ async function showInventory() {
         // Añadir botón de eliminar en la última columna
         const deleteCell = row.insertCell(Object.keys(product).length);
         const deleteButton = document.createElement('i');
-        // bg-danger float-right p-1 rounded-circle ti ti-trash
-        deleteButton.classList.add('ti', 'ti-trash', 'bg-danger', 'float-right', 'p-1', 'rounded-circle');
+        deleteButton.classList.add('far', 'fa-trash-alt', 'bg-danger', 'float-right', 'p-1', 'rounded-circle');
         deleteButton.addEventListener('click', () => deleteProduct(product.code));
         deleteCell.appendChild(deleteButton);
     });
@@ -143,4 +125,115 @@ function deleteProduct(code) {
 }
 
 showInventory();
+
+//ready
+
+document.addEventListener('DOMContentLoaded', () => {
+    $('#inventory-table').DataTable({
+        destroy: true,
+        dom: 'B<"float-right"f>t<"float-left"l><"float-left"i><"d-flex justify-content-end"p><"clearfix">',
+        buttons:[
+            {
+                extend: "pageLength",
+                className: "btn btn-sm btn-light btn-outline-dark",
+            },
+            {
+                extend: "excelHtml5",
+                text: '<i class="fas fa-file-excel"></input>',
+                titleAttr: "Exportar a Excel",
+                className: "btn btn-success border-0",
+                autoFilter: true,
+                title: 'tt_exporte_excel',
+                exportOptions: {
+                    columns: function (column, data, node) {
+                        return true;
+                    },
+                },
+            },
+            {
+                extend: "pdfHtml5",
+                text: '<i class="fas fa-file-pdf"></i>',
+                titleAttr: "Exportar a PDF",
+                className: "btn btn-danger border-0",
+                download: "open",
+                orientation: "portrait",
+                pageSize: "LETTER",
+            },
+            {
+                extend: "copy",
+                text: '<i class="fas fa-copy"></i>',
+                titleAttr: "Copiar",
+                className: "btn btn-sm bg-primary border-0",
+            },
+            {
+                extend: "print",
+                text: '<i class="fas fa-print"></i>',
+                titleAttr: "Imprimir",
+                className: "btn btn-sm btn-secondary border-0",
+                customize: function (win) {
+                    $(win.document.body).css("font-size", "10pt");
+                    $(win.document.body)
+                        .find("table")
+                        .addClass("compact")
+                        .css("font-size", "inherit");
+                },
+                messageTop: null,
+                messageBottom: null,
+            },
+        ],
+        responsive: true,
+        order: [
+            [1, 'DESC']
+        ],
+        displayLength: 30,
+        lengthMenu: [
+            [15, 30, 50, 100, 200, 500, 1000, -1],
+            [15, 30, 50, 100, 200, 500, 1000, "All"]
+        ],
+        language: {
+            decimal: ",",
+            thousands: ".",
+            sProcessing: "Procesando...",
+            sLengthMenu: "Mostrar _MENU_ registros",
+            sZeroRecords: "No se encontraron resultados",
+            sEmptyTable: "Ningún dato disponible en esta tabla",
+            sInfo: "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+            sInfoEmpty: "No hay registros para mostrar",
+            sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
+            sInfoPostFix: "",
+            sSearch: "Buscar:",
+            sUrl: "",
+            sInfoDecimal: ",",
+            sInfoThousands: ".",
+            sLoadingRecords: "Cargando...",
+            oPaginate: {
+                sFirst: "Primero",
+                sLast: "Último",
+                sNext: "<i class='fas fa-chevron-right fw-bold text-primary'></i>",
+                sPrevious: "<i class='fas fa-chevron-left fw-bold text-primary'></i>",
+            },
+            oAria: {
+                sSortAscending:
+                    ": Activar para ordenar la columna de manera ascendente",
+                sSortDescending:
+                    ": Activar para ordenar la columna de manera descendente",
+            },
+            buttons: {
+                copy: "Copiar",
+                colvis: "Visibilidad",
+                pageLength: {
+                    _: "%d filas",
+                    "-1": "Todo",
+                },
+            },
+            select: {
+                rows: {
+                    _: "%d filas seleccionadas",
+                    0: "Click sobre una fila para seleccionarla",
+                    1: "1 fila seleccionada",
+                },
+            },
+        }
+    });
+});
 

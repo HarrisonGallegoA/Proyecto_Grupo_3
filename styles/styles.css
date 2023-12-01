@@ -67,7 +67,7 @@ input[type="password"] {
     border-radius: 10px;
     border: none;
     font-size: 21px;
-    margin-top: 50px;
+    margin: 10px;
 }
 
 #login-form button:hover {
